@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <script>
+        let fruits=['mango','banana','apple','kiwi','orange',10,1]
+        console.log(fruits.length)
+        //insert the element
+        //push- add element to the end
+        fruits.push('onion');
+        console.log(fruits);
+        console.log(fruits.length)
+        //unshift - add element to the first
+        fruits.unshift("potato");
+        console.log(fruits);
+        console.log(fruits.length)
+        //remove the element from the array
+        //pop-remove from last index
+        fruits.pop('onion');
+        console.log(fruits);
+        console.log(fruits.length)
+        //shift - remove element to the first
+        fruits.shift("potato");
+        console.log(fruits);
+        console.log(fruits.length)
+        //sorting
+       fruits.sort()
+       console.log(fruits) //asscending order
+       fruits.reverse()
+       console.log(fruits);
+       //splice-add element at specific index
+       fruits.splice(2,0,'juice');
+       console.log(fruits);
+    </script>
+</body>
+</html>

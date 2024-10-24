@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class TreeNode { 
+            constructor(val) {
+                this.val = val; 
+                this.left = null; 
+                this.right = null; 
+            } 
+        }
+        
+        let root = new TreeNode(1);
+        let b = new TreeNode(2);
+        let c = new TreeNode(3);
+        let d = new TreeNode(4);
+        
+        root.left = b;
+        root.right = c;
+        b.left = d;
+       // console.log(b);
+      //  console.log(c)
+        console.log(root.left.val);
+        console.log(root.val)
+       
+        
+        
+        function checkRoot(root){
+            if(root.val%2==0)
+                console.log("Root is even");
+            else
+                console.log("Root is Odd");
+        }
+        checkRoot(root)
+
+        //
+        //Question - https://leetcode.com/problems/binary-tree-inorder-traversal/
+var inorderTraversal = function(root) {
+    let ans = []
+
+    function inorder(root){
+        if(root==null)
+            return ans;
+        
+        inorder(root.left)
+        ans.push(root.val)
+        inorder(root.right)
+    }
+
+    inorder(root)
+    return ans;
+};
+//
+//Question - https://leetcode.com/problems/binary-tree-postorder-traversal/
+var postorderTraversal = function(root) {
+    let ans = []
+
+    function postorder(root){
+        if(root==null)
+            return ans;
+        
+        postorder(root.left)
+        postorder(root.right)
+        ans.push(root.val)
+    }
+
+    postorder(root)
+    return ans;
+};
+//
+//Question - https://leetcode.com/problems/binary-tree-preorder-traversal/
+var preorderTraversal = function(root) {
+    let ans = []
+
+    function preorder(root){
+        if(root==null)
+            return ans;
+        
+        ans.push(root.val)
+        preorder(root.left)
+        preorder(root.right)
+    }
+
+    preorder(root)
+    return ans;
+};
+
+//Question - https://www.geeksforgeeks.org/problems/sum-of-leaf-nodes/1
+class Solution {
+    SumofLeafNodes(root){
+        if(root==null)
+            return 0;
+        if(root.left==null && root.right==null)
+            return root.data;
+        
+        return this.SumofLeafNodes(root.left) + this.SumofLeafNodes(root.right);
+    } 
+}
+//
+//push -> Insert (top/last) - stack.push()
+//pop -> Delete (top/last) - stack.pop()
+//peek -> Topmost element (top/last) - stack[n-1]
+
+stack = [1,2,3,4,5]
+stack.push(6)
+console.log(stack)
+stack.pop()
+console.log(stack)
+
+let n = stack.length;
+// console.log(stack[n-1])
+
+console.log("Peek Element is : ", stack[n-1])
+let popped = stack.pop();
+console.log("Popped Element is :", popped);
+
+console.log(stack);
+
+
+
+ //
+ function validParenthesis(s){
+    stack = []
+    for(let i=0 ; i<s.length ; i++){
+        if(s[i]=='(')
+            stack.push(s[i]);
+        else{
+            if(stack.length==0)
+                return false;
+            stack.pop();
+        }
+    }
+    if(stack.length==0)
+        return true
+    else
+        return false
+}
+
+
+console.log(validParenthesis("(())")) //True
+console.log(validParenthesis("(()")) //False
+console.log(validParenthesis("))((")) //False
+
+//
+s = "Hello"
+stack = []
+for(let i=0 ; i<s.length ; i++){
+    stack.push(s[i])
+}
+let reverse = "";
+while(stack.length>0){
+    let popped = stack.pop()
+    reverse += popped;
+}
+
+console.log(reverse)    
+//
+//enqueue - Insert element from rear - push()
+//dequeue - Remove the first element - shift()
+//peek/front - Front element /First element
+queue = [1,2,3,4,5];
+
+queue.push(6);
+console.log(queue);
+
+queue.shift(); //1 removed
+queue.shift(); //2 removed
+console.log(queue);
+queue.push(7);
+console.log(queue);
+
+console.log("Front element is :", queue[0]);
+queue.shift(); //3 removed
+console.log("Front element is :", queue[0]);
+//
+//Question Link - https://leetcode.com/problems/time-needed-to-buy-tickets/
+var timeRequiredToBuy = function(tickets, k) {
+    q = []
+    for(i=0 ; i<tickets.length ; i++){
+        q.push(i)
+    }
+    let time = 0
+    while(q.length>0){
+        person = q.shift()
+        tickets[person] -= 1
+        time +=1
+        if (tickets[k]==0){
+            break
+        }
+        if(tickets[person]>0){ //send the person back to the q if he needs more tickets
+            q.push(person)
+        }
+    }
+    return time
+};
+    </script>
+</body>
+</html>

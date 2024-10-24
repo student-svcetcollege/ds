@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let stu=['niki','kajal','nikita','neha'];
+        let n=stu.length;
+        for(i=0;i<n;i++){   //by using for loop //no need of index
+            console.log("hello  "+ stu[i]);
+        }
+        //by using for each loop
+        stu.forEach(s=>console.log("hello "+i))
+
+        //sum of numbers
+        let sub=[10,20,30,40,50];
+        let n1=sub.length;
+        let sum=0;
+        for(i=0;i<n1;i++){
+            sum+=sub[i]
+        }
+        console.log(sum);
+
+
+
+        //sum of third highest element from array
+        let nums=[1,3,5,22,8,23,24];
+        let n2=nums.length;
+      //  nums.sort((a,b)=>a-b);  //by asscending order
+      nums.sort((a,b)=>a-b)
+      nums.reverse()// by descending order
+        console.log(nums);
+         target=nums[n2-1]+nums[n2-2]+nums[n2-3]
+        console.log(target);
+
+    //sum of third highest element from array without using sort method
+       let num=[1,3,5,22,8,20,24];
+        let n3=num.length;
+        num.sort((a,b)=>a-b);
+        console.log(num)
+        add=0;
+        for(i=0;i<3;i++){
+            add+=num[n3-i-1]
+        }
+        console.log(add);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    1    //write a program to check given string is blank or not
+        function check(str){
+            n=str.length;
+            if(n==0){
+                return true
+            }
+            else{
+                return false
+            }
+        }
+        console.log(check(''));
+        console.log(check('fdfdf'))
+
+
+       2 // write a program to split a string and convert it into an array of words
+        function convert(string){
+           len=string.length;
+           s=string.split(' ')
+           console.log(s)
+           
+        }
+        console.log(convert("hello world"))
+
+
+        5 // write a program to reverse words in a given string 
+        function reverseWords(str) {
+            // Split the string into an array of words
+            let words = str.split(" ");
+            console.log(words)
+            // Reverse each word
+            let reversedWords = words.map(word => word.split("").reverse().join(""));
+            
+            // Join the reversed words into a single string
+            return reversedWords.join(" ");
+        }
+        
+        // Test cases
+        console.log(reverseWords("abc hello world 1234"));  // Output: "cba olleh dlrow 4321"
+        
+      4  // abbreviated form
+        function abbreviateName(name) {
+            let words = name.split(" "); // Split the full name into words
+            let abb=" ";
+            console.log(words)
+            for(i=0;i<words.length;i++) {
+             abb+= words[i].at(0); // Full first name, initial of last name
+            } 
+            return abb;
+        }
+        
+        let fullName = "Virat Kohli sharama";
+        let abbreviatedForm = abbreviateName(fullName);
+        
+        console.log(abbreviatedForm);  // Output: "virat k"
+
+        //3  check character at provided index is upper case 
+        function checkForUpperCase(stri, index) {
+            if ( stri[index] === stri[index].toUpperCase()){
+                return true; // Compare the character with its uppercase version
+            } else {
+                return false; // Return false if the index is out of bounds
+            }
+        }
+        
+        console.log(checkForUpperCase("JavaScript", 1)); // Output: false (because 'a' is not uppercase)
+        console.log(checkForUpperCase("JavaScript", 0)); // Output: true (because 'J' is uppercase)
+        
+        
+    </script>
+</body>
+</html>

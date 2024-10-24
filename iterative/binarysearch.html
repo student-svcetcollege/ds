@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>searching</title>
+</head>
+
+<body>
+    <script>
+        let arr = [2, 3, 5, 7, 8];
+        let n = arr.length;//5
+        let start = 0;
+        let end = n - 1;
+        let key = 88;
+        let found = false;
+        while (start <= end) {
+            let m = Math.floor((start + end) / 2);
+            if (arr[m] == key) {
+                found = true;
+                console.log(key, "element found at index", m)
+                break;
+            }
+            else if (arr[m] > key) {
+                end = m - 1;              //left
+            }
+            else {
+                start = m + 1               //right
+            }
+        }
+        if(found==false){
+            console.log("not found")
+        }
+
+    </script>
+</body>
+
+</html>

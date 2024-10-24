@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // show all subsquence of given string
+        function subsequence(s,i,current){
+                if(i==s.length){
+                    console.log(current)
+                    return ;
+                }
+                subsequence(s,i+1,current+s[i])            //take
+                subsequence(s,i+1,current)      //leave
+        }
+        console.log(subsequence('abc',0,current=" "))
+
+
+        // show all substring of given array in a power set
+        function subset(a,i,current,powerset){
+            if(i==a.length){
+                powerset.push([...current])
+                return ;
+            }
+            subset(a,i+1,current,powerset)            //leave
+            current.push(a[i]);
+            subset(a,i+1,current,powerset)      //take
+            current.pop();
+    }
+    let a=[1,2,3]
+    console.log(subset(a,0,[],powerset=[]))
+    console.log(powerset);
+
+
+
+    </script>
+</body>
+</html>

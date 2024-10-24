@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const row = 2;
+        const col = 4;
+        const array = new Array(row);
+        n = array.length;
+        console.log(n)
+        console.log(array);
+        for (let i = 0; i < n; i++) {
+            array[i] = new Array(col).fill(1);
+        }
+        console.log(array);
+        console.log(n)
+
+        mat = [[1, 2, 3, 2], //creating
+        [4, 5, 6, 3],
+        [7, 8, 9, 5]]
+        console.log(mat);
+        //    console.log(mat[1][2])
+        //itterating 2d array 0r printing all element of 2D array
+        m = [[1, 2, 3, 2], //creating
+        [4, 5, 6, 3],
+        [7, 8, 9, 5]];
+        let rows = 3;
+        let cols = 4;
+        for (let r = 0; r < rows; r++) {
+            for (c = 0; c < cols; c++) {
+                console.log(m[r][c])
+            }
+        }
+
+        // check given matrix is identity or not
+        function check(matrix) {
+            let r = matrix.length;
+            let c = matrix[0].length;
+            console.log(r, c)
+            if (r != c) {
+                return false;
+            }
+            for (let i = 0; i < r; i++) {
+                for (j = 0; j < c; j++) {
+                    if (i == j && matrix[i][j] != 1) {
+                        return false;
+                    }
+                    else if (i != j && matrix[i][j] != 0) {
+                        return false;
+                    }
+                }
+                return true
+            }
+        }
+        let matrix = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+        console.log(check(matrix));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        var arr=[2,4,6,7,9];
+        n=arr.length; //5
+        key=17;
+        var found=false;
+        for(i=0;i<n;i++){ //
+            if(arr[i]==key){
+                found=true
+                console.log("found at index ",i)
+            }
+        }
+        if(found==false)
+        {
+            console.log("notfound  ")
+        }
+            */
+        /*
+       
+   var arr=[2,4,6,7,9];
+   n=arr.length; //5
+   key=17;
+   var found=false;
+   for(i=0;i<n;i++){ //
+       if(arr[i]==key){
+           found=true
+           break;
+       }
+   }
+   if(found==true)
+   {
+       console.log("found at index",i)
+   }
+   else{
+       console.log("not found ")
+   }
+       
+       */
+        // by using function
+/*
+        function linear(arr,key) {
+            n = arr.length; //5
+            for (i = 0; i < n; i++) { //
+                if (arr[i] == key) {
+                   return i;//return the index of target element
+                }
+            }
+            return -1; // if element not found return -1
+        }
+        let arr=[1,2,3,4,5]
+        key=7;
+        let res=linear(arr,key);
+        if (res!== -1) {
+            console.log(`Element found at index: ${res}`);
+        } else {
+            console.log("Element not found");
+        }
+
+
+*/
+        // Linear Search function
+        /*
+function linearSearch(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+            return i; // Return the index of the target element
+        }
+    }
+    return -1; // If the element is not found, return -1
+}
+
+// Taking input from the user
+let inputArray = prompt("Enter array elements separated by commas:");
+console.log(inputArray)
+// Convert the input string to an array of numbers
+let numbers = inputArray.split(",").map(Number);
+console.log(numbers)
+
+// Taking the target element from the user
+let target = Number(prompt("Enter the target element to search:"));
+console.log(target)
+let result = linearSearch(numbers, target);
+
+if (result !== -1) {
+    console.log(`Element found at index: ${result}`);
+} else {
+    console.log("Element not found");
+}
+
+*/
+function linear(arr,key){
+    
+    n=arr.length; //5
+    
+    var found=false;
+    for(i=0;i<n;i++){ //
+        if(arr[i]==key){
+            found=true
+            console.log("found at index ",i)
+        }
+    }
+    if(found==false)
+    {
+        console.log("notfound  ")
+    }
+    return arr
+}
+let arr=[2,4,6,7,9];
+let key=7;
+console.log(linear(arr,key))
+
+
+    </script>
+</body>
+
+</html>

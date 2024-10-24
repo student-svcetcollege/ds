@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Middle of Linked List</title>
+</head>
+<body>
+    <script>
+        class Node {
+            constructor(data) {
+                this.data = data;
+                this.next = null;
+            }
+        }
+
+        // Creating nodes
+        let a = new Node(1);
+        let b = new Node(2);
+        let c = new Node(3);
+        let d = new Node(4);
+        let e = new Node(5);  // Add this node to make the list odd-sized
+        let f=new Node(6); // even size
+        
+        // Linking nodes to form a linked list
+        let head = a;
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        d.next = e;  // Now we have 5 nodes in the list
+        e.next=f;
+
+        // Function to find the middle of the linked list
+        function findMiddle(head) {
+            let slow = head;
+            let fast = head;
+
+            while (fast !== null && fast.next !== null) {
+                slow = slow.next;         // Move slow pointer by one step
+                fast = fast.next.next;    // Move fast pointer by two steps
+            }
+
+            return slow;  // Slow will point to the middle node
+        }
+
+        let middleNode = findMiddle(head);
+        console.log("The middle node is:", middleNode.data);  // Should log 3 as the middle
+    </script>
+</body>
+</html>
